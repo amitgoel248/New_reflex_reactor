@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    >
+    tools:context="com.example.nikita.helplayout.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -48,6 +48,7 @@
                 android:layout_gravity="fill"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textAlignment="center"
                 android:text="@string/RR"
                 android:textSize="18dp"/>
 
@@ -81,6 +82,7 @@
                 android:layout_gravity="fill"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textAlignment="center"
                 android:text="@string/level"
                 android:textSize="18dp"/>
 
@@ -114,7 +116,7 @@
                 android:layout_gravity="fill"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/level"
+                android:text="@string/cat"
                 android:textSize="18dp"/>
 
         </LinearLayout>
@@ -147,7 +149,7 @@
                 android:layout_gravity="fill"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/level"
+                android:text="@string/rules"
                 android:textSize="18dp"/>
 
         </LinearLayout>

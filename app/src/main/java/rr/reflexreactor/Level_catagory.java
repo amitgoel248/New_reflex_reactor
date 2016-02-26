@@ -33,6 +33,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Random;
 
 public class Level_catagory extends FragmentActivity {
@@ -161,15 +162,26 @@ public class Level_catagory extends FragmentActivity {
                 catagory_list[i]=foo_list[aa];
                 bw.append(foo_list[aa] + " ");
             }
+            HashMap hm =  new HashMap();
             for (int i = 0; i < 10; i++) {
                 int value = random.nextInt(number_of_catagories);
-                Category_id[i]=value;
-                bw.append(value + " ");
+                int value2 = random.nextInt(7) + 1;
+                if(hm.containsKey(value+""+value2))
+                {
+                    i--;
+                }
+                else
+                {
+                    hm.put(value+""+value2,"abc");
+                    Category_id[i]=value;
+                    question_indexes[i]=value2;
+                }
             }
             for (int i = 0; i < 10; i++) {
-                int value = random.nextInt(4) + 1;
-                question_indexes[i]=value;
-                bw.append(value + " ");
+                bw.append(Category_id[i] + " ");
+            }
+            for (int i = 0; i < 10; i++) {
+                bw.append(question_indexes[i] + " ");
             }
             bw.close();
 
@@ -218,7 +230,11 @@ public class Level_catagory extends FragmentActivity {
 
         if(my_level==0 || number_of_catagories==0)
         {
-            Toast.makeText(this,"Please Select properly",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"Please Select a Level and more than two categories",Toast.LENGTH_SHORT).show();
+        }
+        else if(number_of_catagories<=1)
+        {
+            Toast.makeText(this,"Please Select at least two categories",Toast.LENGTH_SHORT).show();
         }
         else {
             try {
@@ -233,6 +249,7 @@ public class Level_catagory extends FragmentActivity {
                 FileWriter fw = new FileWriter(file.getAbsoluteFile());
                 BufferedWriter bw = new BufferedWriter(fw);
                 //  bw.write(s);
+                HashMap hm =  new HashMap();
                 bw.write(my_level + " ");
                 bw.append(number_of_catagories + " ");
                 for (int i = 0; i < number_of_catagories; i++) {
@@ -240,13 +257,23 @@ public class Level_catagory extends FragmentActivity {
                 }
                 for (int i = 0; i < 10; i++) {
                     int value = random.nextInt(number_of_catagories);
-                    Category_id[i]=value;
-                    bw.append(value + " ");
+                    int value2 = random.nextInt(7) + 1;
+                    if(hm.containsKey(value+""+value2))
+                    {
+                        i--;
+                    }
+                    else
+                    {
+                        hm.put(value+""+value2,"abc");
+                        Category_id[i]=value;
+                        question_indexes[i]=value2;
+                    }
                 }
                 for (int i = 0; i < 10; i++) {
-                    int value = random.nextInt(4) + 1;
-                    question_indexes[i]=value;
-                    bw.append(value + " ");
+                    bw.append(Category_id[i] + " ");
+                }
+                for (int i = 0; i < 10; i++) {
+                    bw.append(question_indexes[i] + " ");
                 }
                 bw.close();
 

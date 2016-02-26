@@ -34,9 +34,25 @@
     <string name="title_activity_accepted_challenge">AcceptedChallenge</string>
 
 
-    <string name="RR">Reflex Reactor is a fastest finger quiz. You have to quickly tap the options in correct
-    order to get more points.</string>
+     <string name="RR">Reflex Reactor is a fastest finger first quiz. You have to quickly tap the options in correct
+    order to get more points.\n</string>
     <string name="level">Level 1: Time limit is 30 sec.\nLevel 2: Time limit is 20 sec.
-        \nLevel 3: Time limit is 15 sec.\nLevel 4: Time limit is 10 sec.</string>
+        \nLevel 3: Time limit is 15 sec.\nLevel 4: Time limit is 10 sec.\n</string>
+    <string name="cat">We have 12 categories.\n\n1. MISC: Questions of different kinds-synonyms, calculations and more.
+        \n\n2. GENERAL KNOWLEDGE: Questions of general intelligence.\n\n
+    3. CRICKET: Questions entirely based on cricket.\n\n4. GEOGRAPHY: Questions related to different places.\n\n5.
+        Mythology: Questions related to hindu mythologies like Mahabharata.\n\n6. History: Questions related
+    to historical events.\n\n7. INDIAN CULTURE: Questions about Indian culture.\n\n8. POLITICS:
+        Questions related to political activities.\n\n9.SCIENCE: Contains simple science questions.\n\n10. SPORTS:
+    Questions related to different international sports.\n\n11. TV AND MOVIES: Questions related to different Tv
+        series and movies.\n\n12. ECONOMICS: Questions related to economics.\n
+    </string>
+    <string name="rules">1. You must press SUBMIT button to finalise your answer.
+        After pressing submit, you cannot change your answer.\n\n
+        2. You can reset your answer using RESET button. It will allow you to retap your answer.\n\n
+        3. Scoring is based on degree of correctness of answer as well as response time. If only two options are in correct
+        order then you will get negative marks!\n\n
+        4. If you won a match you will be given 10 gems!\n\n
+        5. If you lose a match 5 gems will be deducted!\n</string>
 
 </resources>
