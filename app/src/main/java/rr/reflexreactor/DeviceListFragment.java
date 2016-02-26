@@ -5,6 +5,7 @@ import android.app.ListFragment;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.net.wifi.p2p.WifiP2pConfig;
 import android.net.wifi.p2p.WifiP2pDevice;
 import android.net.wifi.p2p.WifiP2pDeviceList;
@@ -115,9 +116,24 @@ public class DeviceListFragment extends ListFragment implements WifiP2pManager.P
     /**
      * Initiate a connection with the peer.
      */
+//    @Override
+//    public void onListItemClick(ListView l, View v, int position, long id) {
+//        WifiP2pDevice device = (WifiP2pDevice) getListAdapter().getItem(position);
+//        ((DeviceActionListener) getActivity()).showDetails(device);
+//    }
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
+        int sz=l.getCount();
+        for(int i=0;i<sz;i++){
+            View jmd=l.getChildAt(i);
+            if(jmd!=null){
+                jmd.setBackgroundColor(Color.WHITE);
+            }
+        }
         WifiP2pDevice device = (WifiP2pDevice) getListAdapter().getItem(position);
+        if(getListAdapter().isEnabled(position)){
+            v.setBackgroundColor(Color.parseColor("#d32f2f"));
+        }
         ((DeviceActionListener) getActivity()).showDetails(device);
     }
 
