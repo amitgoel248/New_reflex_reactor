@@ -170,7 +170,7 @@
                     android:gravity="center"
                     android:text="Reset"
                     android:textColor="#000000"
-                    android:textSize="25dp"
+                    android:textSize="20dp"
                     android:onClick="reset_option"/>
             </LinearLayout>
 
@@ -192,7 +192,7 @@
                     android:gravity="center"
                     android:text="Submit"
                     android:textColor="#000000"
-                    android:textSize="25dp"
+                    android:textSize="20dp"
                     android:onClick="submit_answer"/>
             </LinearLayout>
         </LinearLayout>

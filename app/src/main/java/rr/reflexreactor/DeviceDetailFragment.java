@@ -178,6 +178,7 @@ public class DeviceDetailFragment extends Fragment implements WifiP2pManager.Con
                 break;
             case R.id.test:
                 Intent intent=new Intent(getActivity(),Level_catagory.class);
+                intent.putExtra("mode","offline");
                 startActivity(intent);
                 break;
         }
@@ -423,7 +424,9 @@ public class DeviceDetailFragment extends Fragment implements WifiP2pManager.Con
                         FileServerobj.executeOnExecutor (AsyncTask.THREAD_POOL_EXECUTOR, new String[] { null });
                     }
                     if(result.equals("Demo")) {
-                        mFilecontext.startActivity(new Intent(mFilecontext, Questions.class));
+                        Intent my_new_intent = new Intent(mFilecontext, Questions.class);
+                        my_new_intent.putExtra("mode","offline");
+                        mFilecontext.startActivity(my_new_intent);
                     }
                 }
             }

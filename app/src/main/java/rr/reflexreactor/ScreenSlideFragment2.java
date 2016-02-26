@@ -32,19 +32,19 @@ public class ScreenSlideFragment2 extends Fragment {
         cat5 = (Button) rootView.findViewById(R.id.catagory5);
         cat6 = (Button) rootView.findViewById(R.id.catagory6);
         if (pageNum == 0) {
-            cat1.setText("GEOGRAPHY");
-            cat2.setText("SPORTS");
-            cat3.setText("MYTHOLOGY");
+            cat1.setText("ECONOMICS");
+            cat2.setText("GENERAL");
+            cat3.setText("MISCELLANEOUS");
             cat4.setText("CRICKET");
-            cat5.setText("POLITICS");
-            cat6.setText("HISTORY");
+            cat5.setText("GEOGRAPHY");
+            cat6.setText("MYTHOLOGY");
         } else {
-            cat1.setText("FOOD");
-            cat2.setText("MUSIC");
-            cat3.setText("SCIENCE");
-            cat4.setText("CULTURE");
+            cat1.setText("HISTORY");
+            cat2.setText("INDIAN_CULTURE");
+            cat3.setText("MOVIES");
+            cat4.setText("SPORTS");
             cat5.setText("POLITICS");
-            cat6.setText("HISTORY");
+            cat6.setText("SCIENCE");
 
         }
         return rootView;

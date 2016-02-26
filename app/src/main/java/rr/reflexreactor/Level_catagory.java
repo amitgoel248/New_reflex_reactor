@@ -72,7 +72,7 @@ public class Level_catagory extends FragmentActivity {
         User_id = prev_intent.getStringArrayListExtra("user_id");
         user_names=prev_intent.getStringArrayExtra("user_names");
 
-        if(mode==null) mode="multi_play";
+        //if(mode==null) mode="multi_play";
 
         pager2 = (ViewPager)findViewById(R.id.pager2);
         pagerAdapter2 = new ScreenSlidePagerAdapter2(getSupportFragmentManager());
@@ -155,9 +155,9 @@ public class Level_catagory extends FragmentActivity {
             foo = random.nextInt(10)+1;
             number_of_catagories=foo;
             bw.append(foo + " ");
-            String foo_list[] = {"GEOGRAPHY","SPORTS","MYTHOLOGY","CRICKET","POLITICS","HISTORY","FOOD","MUSIC","SCIENCE","CULTURE"};
+            String foo_list[] = {"ECONOMICS","GENERAL","MISCELLANEOUS","CRICKET","GEOGRAPHY","MYTHOLOGY","HISTORY","INDIAN_CULTURE","MOVIES","SPORTS","POLITICS","SCIENCE"};
             for (int i = 0; i < foo; i++) {
-                int aa = random.nextInt(10);
+                int aa = random.nextInt(12);
                 catagory_list[i]=foo_list[aa];
                 bw.append(foo_list[aa] + " ");
             }
@@ -179,11 +179,22 @@ public class Level_catagory extends FragmentActivity {
         }
 
         String x="solo_play";
-        if(!mode.equals(x))
-        sendFile();
-
+        String xx = "offline";
         String y = "online";
-        if(mode.equals(y))
+        if(mode.equals(x))
+        {
+            Intent intent = new Intent(this, Questions.class);
+            intent.putExtra("mode","solo_play");
+            startActivity(intent);
+        }
+        else if(mode.equals(xx))
+        {
+            sendFile();
+            Intent intent = new Intent(this, Questions.class);
+            intent.putExtra("mode","offline");
+            startActivity(intent);
+        }
+        else if(mode.equals(y))
         {
          Intent intent = new Intent(this,Send_Request_Activity.class);
             intent.putExtra("idx",number_of_catagories);
@@ -195,8 +206,10 @@ public class Level_catagory extends FragmentActivity {
             intent.putExtra("question_indexes",question_indexes);
             startActivity(intent);
         }
-        else {
+        else
+        {
             Intent intent = new Intent(this, Questions.class);
+            intent.putExtra("mode","solo_play");
             startActivity(intent);
         }
     }
@@ -244,11 +257,22 @@ public class Level_catagory extends FragmentActivity {
             }
 
             String x="solo_play";
-            if(!mode.equals(x))
-            sendFile();
-
+            String xx = "offline";
             String y = "online";
-            if(mode.equals(y))
+            if(mode.equals(x))
+            {
+                Intent intent = new Intent(this, Questions.class);
+                intent.putExtra("mode","solo_play");
+                startActivity(intent);
+            }
+            else if(mode.equals(xx))
+            {
+                sendFile();
+                Intent intent = new Intent(this, Questions.class);
+                intent.putExtra("mode","offline");
+                startActivity(intent);
+            }
+            else if(mode.equals(y))
             {
                 Intent intent = new Intent(this,Send_Request_Activity.class);
                 intent.putExtra("idx",number_of_catagories);
@@ -260,7 +284,8 @@ public class Level_catagory extends FragmentActivity {
                 intent.putExtra("question_indexes",question_indexes);
                 startActivity(intent);
             }
-            else {
+            else
+            {
                 Intent intent = new Intent(this, Questions.class);
                 intent.putExtra("mode","solo_play");
                 startActivity(intent);
